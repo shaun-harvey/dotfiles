@@ -59,3 +59,6 @@
 
 [init]
   defaultBranch = master
+[user]
+	email = yevrahnuahs@gmail.com
+	name = shaun harvey
