@@ -9,5 +9,41 @@
     "key": "cmd+shift+v",
     "command": "pasteAndIndent.action",
     "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+c",
+    "command": "workbench.panel.chatSidebar.copilot"
+  },
+  {
+    "key": "ctrl+cmd+i",
+    "command": "-workbench.panel.chatSidebar.copilot"
+  },
+  {
+    "key": "ctrl+x",
+    "command": "workbench.view.explorer",
+    "when": "viewContainer.workbench.view.explorer.enabled"
+  },
+  {
+    "key": "shift+cmd+e",
+    "command": "-workbench.view.explorer",
+    "when": "viewContainer.workbench.view.explorer.enabled"
+  },
+
+  {
+    "key": "ctrl+[Period]",
+    "command": "workbench.action.terminal.focus"
+  },
+  {
+    "key": "ctrl+[Period]",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+[Semicolon]",
+    "command": "github.copilot.interactiveEditor.explain"
+  },
+  {
+    "key": "ctrl+[Comma]",
+    "command": "workbench.action.closePanel"
   }
 ]

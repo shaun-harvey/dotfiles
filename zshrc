@@ -1,10 +1,10 @@
 ZSH=$HOME/.oh-my-zsh
 
 # You can change the theme with another one from https://github.com/robbyrussell/oh-my-zsh/wiki/themes
-ZSH_THEME="Simple"
+ZSH_THEME="jbergantine"
 
 # Useful oh-my-zsh plugins for Le Wagon bootcamps
-plugins=(git gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search)
+plugins=(git gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search web-search copyfile jsontools)
 
 # (macOS-only) Prevent Homebrew from reporting - https://github.com/Homebrew/brew/blob/master/docs/Analytics.md
 export HOMEBREW_NO_ANALYTICS=1
@@ -82,6 +82,7 @@ alias go='cd'
 alias nz='nano ~/.zshrc'
 alias del='trash'
 alias et='osascript -e "tell application \"Finder\" to empty trash"'
+alias home='~'
 
 # File Aliases
 alias dt="cd ~/Desktop"
@@ -90,7 +91,7 @@ alias doc='cd ~/Documents'
 
 # Code Aliases
 alias html='touch index.html'
-alias css='touch styles.css'
+alias css='touch style.css'
 alias js='touch script.js'
 alias py='touch script.py'
 alias rb='touch script.rb'
@@ -111,7 +112,7 @@ alias vs='code .'
 alias gs='git status'
 alias ga='git add'
 alias gb='git branch'
-alias gc='git commit'
+alias gc='git commit -m'
 alias gd='git diff'
 alias gco='git checkout'
 alias gl='git log'
@@ -131,7 +132,6 @@ alias gf='git fetch'
 alias grm='git rm'
 
 # Website Aliases
-alias google='open https://www.google.com/'
 alias gpt='open https://chat.openai.com/'
 alias docs='open https://ruby-doc.org/3.2.2/'
 alias yt='open https://www.youtube.com/'
@@ -139,6 +139,15 @@ alias kitt='open https://kitt.lewagon.com/camps/0'
 alias fonts='open https://fonts.google.com/'
 alias colorhunt='open https://colorhunt.co/'
 alias mdn='open https://developer.mozilla.org/en-US/'
+alias yevrah='open https://mail.google.com/mail/u/1/#inbox'
+
+# Applications 
+alias vlc='open -a "/Applications/VLC.app/Contents/MacOS/VLC"'
+alias rx='open -a "/Applications/iZotope RX 10 Audio Editor.app"'
+alias figma='open -a "/Applications/Figma.app"'
+alias ableton='open -a "/Applications/Ableton Live 11 Suite.app"'
+alias cmm='open -a "/Applications/CleanMyMac X.app"'
+alias slack='open -a "/Applications/Slack.app"'
 
 
 run() {
@@ -187,3 +196,5 @@ run() {
             ;;
     esac
 }
+
+
