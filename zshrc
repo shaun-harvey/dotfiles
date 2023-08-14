@@ -1,7 +1,7 @@
 ZSH=$HOME/.oh-my-zsh
 
 # You can change the theme with another one from https://github.com/robbyrussell/oh-my-zsh/wiki/themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="Simple"
 
 # Useful oh-my-zsh plugins for Le Wagon bootcamps
 plugins=(git gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search)
@@ -70,3 +70,120 @@ export EDITOR=code
 
 # Set ipdb as the default Python debugger
 export PYTHONBREAKPOINT=ipdb.set_trace
+
+# Basic Aliases
+alias pd='pwd'
+alias c='clear'
+alias r='rake'
+alias nf='mkdir -p'
+alias new='touch'
+alias rl='exec zsh'
+alias go='cd'
+alias nz='nano ~/.zshrc'
+alias del='trash'
+alias et='osascript -e "tell application \"Finder\" to empty trash"'
+
+# File Aliases
+alias dt="cd ~/Desktop"
+alias dl="cd ~/Downloads"
+alias doc='cd ~/Documents'
+
+# Code Aliases
+alias html='touch index.html'
+alias css='touch styles.css'
+alias js='touch script.js'
+alias py='touch script.py'
+alias rb='touch script.rb'
+alias env='touch .env'
+alias java='touch Main.java'
+alias ccc='touch main.c'
+alias cpp='touch main.cpp'
+alias sh='touch script.sh'
+alias txt='touch file.txt'
+alias md='touch README.md'
+alias npm='npm install'
+alias gem='gem install'
+alias pip='pip3 install'
+alias brew='brew install'
+alias vs='code .'
+
+# Git Aliases
+alias gs='git status'
+alias ga='git add'
+alias gb='git branch'
+alias gc='git commit'
+alias gd='git diff'
+alias gco='git checkout'
+alias gl='git log'
+alias gpl='git pull'
+alias gpp='git pull --prune'
+alias gr='git remote'
+alias grv='git remote -v'
+alias gh='git push'
+alias gpom='git push origin master'
+alias gpl='git pull'
+alias grh='git reset --hard'
+alias gm='git merge'
+alias grb='git rebase'
+alias gcl='git clone'
+alias gsta='git stash'
+alias gf='git fetch'
+alias grm='git rm'
+
+# Website Aliases
+alias google='open https://www.google.com/'
+alias gpt='open https://chat.openai.com/'
+alias docs='open https://ruby-doc.org/3.2.2/'
+alias yt='open https://www.youtube.com/'
+alias kitt='open https://kitt.lewagon.com/camps/0'
+alias fonts='open https://fonts.google.com/'
+alias colorhunt='open https://colorhunt.co/'
+alias mdn='open https://developer.mozilla.org/en-US/'
+
+
+run() {
+    if [ $# -eq 0 ]; then
+        echo "No arguments supplied. Please provide a file to run."
+        return 1
+    fi
+
+    local file="$1"
+    local extension="${file##*.}"
+
+    case $extension in
+        "py")
+            python3 $file
+            ;;
+        "rb")
+            ruby $file
+            ;;
+        "js")
+            node $file
+            ;;
+        "java")
+            javac $file && java ${file%.*}
+            ;;
+        "pl")
+            perl $file
+            ;;
+        "php")
+            php $file
+            ;;
+        "swift")
+            swift $file
+            ;;
+        "go")
+            go run $file
+            ;;
+        "r")
+            Rscript $file
+            ;;
+        "sh")
+            bash $file
+            ;;
+        *)
+            echo "Unsupported file type: .$extension"
+            return 1
+            ;;
+    esac
+}
